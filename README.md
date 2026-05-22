@@ -42,7 +42,7 @@ saucedemo/
 ### Prerequisites
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/saucedemo.git
+git clone https://github.com/dimeonsports/saucedemo.git
 cd saucedemo
 ```
 
@@ -76,7 +76,7 @@ One workflow runs automatically on every push or pull request to `main`:
 
 | Workflow | Trigger           | What runs                     |
 |----------|-------------------|-------------------------------|
-| `CI`     | Push / PR to main | Build → Test → Allure Report  |
+| `CI`     | Push / PR to master | Build → Test → Allure Report  |
 
 Tests run on **Chrome** and **Firefox** in headless mode.
 
@@ -84,4 +84,4 @@ Tests run on **Chrome** and **Firefox** in headless mode.
 
 After the workflow completes, the Allure report is published to:
 
-**https://YOUR_USERNAME.github.io/saucedemo/**
+**https://dimeonsports.github.io/saucedemo/**
