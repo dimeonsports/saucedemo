@@ -34,8 +34,8 @@ public abstract class BaseTest {
     driver = DriverFactory.createDriver();
     driver.manage().window().maximize();
     String browser = System.getProperty("browser", "chrome");
-    Allure.getLifecycle().updateTestCase(result ->
-        result.setHistoryId(result.getFullName() + "[" + browser + "]"));
+    Allure.getLifecycle()
+        .updateTestCase(result -> result.setHistoryId(result.getFullName() + "[" + browser + "]"));
     Allure.parameter("browser", browser);
   }
 
