@@ -21,7 +21,7 @@ public class DriverFactory {
   private static WebDriver createChromeDriver() {
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--disable-features=PasswordLeakDetection");
-    if (Boolean.parseBoolean(System.getProperty("headless", "false"))) {
+    if (isHeadless()) {
       options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
     }
     options.setExperimentalOption(
@@ -32,9 +32,13 @@ public class DriverFactory {
   private static WebDriver createFirefoxDriver() {
     FirefoxOptions options = new FirefoxOptions();
     options.addPreference("signon.rememberSignons", false);
-    if (Boolean.parseBoolean(System.getProperty("headless", "false"))) {
+    if (isHeadless()) {
       options.addArguments("-headless");
     }
     return new FirefoxDriver(options);
+  }
+
+  private static boolean isHeadless() {
+    return Boolean.parseBoolean(System.getProperty("headless", "false"));
   }
 }

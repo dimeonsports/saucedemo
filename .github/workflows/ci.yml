@@ -62,7 +62,7 @@ jobs:
       - name: Run tests (Chrome + Firefox headless)
         run: |
           chmod +x gradlew
-          ./gradlew testAllBrowsers -Pheadless=true
+          ./gradlew clean testAllBrowsers -Pheadless=true
 
       - name: Upload allure-results
         if: always()

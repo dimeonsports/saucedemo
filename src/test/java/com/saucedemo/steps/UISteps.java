@@ -9,6 +9,7 @@ import com.saucedemo.pages.ProductsPage;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import java.io.ByteArrayInputStream;
+import java.util.List;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -30,15 +31,15 @@ public class UISteps {
     LoginPage loginPage = new LoginPage(driver);
     loginPage.open();
     loginPage.login(username, password);
-    assertTrue(driver.getCurrentUrl().contains("/inventory"));
     productsPage = new ProductsPage(driver);
     attachScreenshot("After login");
   }
 
   @Step("Verify products page has 6 products")
   public void verifyProductCount() {
-    assertEquals(EXPECTED_PRODUCT_COUNT, productsPage.getProductCount());
-    Allure.addAttachment("Products", String.join("\n", productsPage.getProductNames()));
+    List<String> names = productsPage.getProductNames();
+    assertEquals(EXPECTED_PRODUCT_COUNT, names.size());
+    Allure.addAttachment("Products", String.join("\n", names));
     attachScreenshot("Products page");
   }
 

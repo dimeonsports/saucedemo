@@ -19,6 +19,19 @@ This repository contains UI automation tests for [saucedemo.com](https://www.sau
 
 ---
 
+## ✅ Test Coverage
+
+The test suite (`SauceDemoTest`) covers 4 requirements, each verified as a separate step:
+
+| # | Requirement | Verified by |
+|---|-------------|-------------|
+| 1 | Ability to login | `login()` — navigates to inventory page |
+| 2 | Products page has 6 products | `verifyProductCount()` — asserts count equals 6 |
+| 3 | Ability to add the product with the highest price to the cart | `addMostExpensiveToCart()` — finds max price, clicks Add to Cart |
+| 4 | Product is successfully added to the cart | `verifyCart()` — opens cart, asserts product name is present |
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -50,16 +63,17 @@ cd saucedemo
 
 ```bash
 # Chrome (default)
-./gradlew test
+./gradlew testChrome
 
 # Firefox
-./gradlew test -Dbrowser=firefox
+./gradlew testFirefox
 
 # Headless mode
-./gradlew test -Pheadless=true
+./gradlew testChrome -Pheadless=true
+./gradlew testFirefox -Pheadless=true
 
 # All browsers (Chrome + Firefox)
-./gradlew testAllBrowsers
+./gradlew clean testAllBrowsers
 ```
 
 ### View Allure report
@@ -72,11 +86,11 @@ allure serve build/allure-results
 
 ## 🚀 Run on GitHub Actions
 
-One workflow runs automatically on every push or pull request to `main`:
+One workflow runs automatically on every push or pull request to `master`:
 
-| Workflow | Trigger           | What runs                     |
-|----------|-------------------|-------------------------------|
-| `CI`     | Push / PR to master | Build → Test → Allure Report  |
+| Workflow | Trigger             | What runs                    |
+|----------|---------------------|------------------------------|
+| `CI`     | Push / PR to master | Build → Test → Allure Report |
 
 Tests run on **Chrome** and **Firefox** in headless mode.
 

@@ -1,6 +1,7 @@
 package com.saucedemo.tests;
 
 import com.saucedemo.driver.DriverFactory;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,6 +33,10 @@ public abstract class BaseTest {
   void setUp() {
     driver = DriverFactory.createDriver();
     driver.manage().window().maximize();
+    String browser = System.getProperty("browser", "chrome");
+    Allure.getLifecycle().updateTestCase(result ->
+        result.setHistoryId(result.getFullName() + "[" + browser + "]"));
+    Allure.parameter("browser", browser);
   }
 
   @AfterEach

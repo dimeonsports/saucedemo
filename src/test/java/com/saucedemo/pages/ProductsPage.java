@@ -20,10 +20,6 @@ public class ProductsPage extends BasePage {
     super(driver);
   }
 
-  public int getProductCount() {
-    return getItems().size();
-  }
-
   public List<String> getProductNames() {
     return getItems().stream()
         .map(item -> item.findElement(productName).getText())
@@ -44,12 +40,12 @@ public class ProductsPage extends BasePage {
 
   public CartPage openCart() {
     driver.findElement(cartLink).click();
+    wait.until(ExpectedConditions.urlContains("/cart"));
     return new CartPage(driver);
   }
 
   private List<WebElement> getItems() {
-    wait.until(ExpectedConditions.visibilityOfElementLocated(productItems));
-    return driver.findElements(productItems);
+    return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(productItems));
   }
 
   private double parsePrice(String text) {
