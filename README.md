@@ -21,7 +21,7 @@ This repository contains UI automation tests for [saucedemo.com](https://www.sau
 
 ## ✅ Test Coverage
 
-The test suite (`SauceDemoTest`) covers 4 requirements, each verified as a separate step:
+The test suite (`SauceDemoTest`) covers 4 requirements -> each verified as a separate step:
 
 | # | Requirement | Verified by |
 |---|-------------|-------------|
