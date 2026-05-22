@@ -96,6 +96,4 @@ Tests run on **Chrome** and **Firefox** in headless mode.
 
 ### View Allure report (GitHub Pages)
 
-After the workflow completes, the Allure report is published to:
-
-**https://dimeonsports.github.io/saucedemo/**
+After the workflow completes, open the **Report** job in GitHub Actions — the direct link to the Allure report is printed at the bottom of the job summary.
