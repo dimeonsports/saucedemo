@@ -1,3 +1,3 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","22151","sauceDemoTest()","","2026-05-22","passed","2026-05-22","","com.saucedemo.tests.SauceDemoTest","com.saucedemo.tests.SauceDemoTest","sauceDemoTest"
-"","43930","sauceDemoTest()","","2026-05-22","passed","2026-05-22","","com.saucedemo.tests.SauceDemoTest","com.saucedemo.tests.SauceDemoTest","sauceDemoTest"
+"","12879","sauceDemoTest()","","2026-05-22","passed","2026-05-22","","com.saucedemo.tests.SauceDemoTest","com.saucedemo.tests.SauceDemoTest","sauceDemoTest"
+"","21873","sauceDemoTest()","","2026-05-22","passed","2026-05-22","","com.saucedemo.tests.SauceDemoTest","com.saucedemo.tests.SauceDemoTest","sauceDemoTest"
